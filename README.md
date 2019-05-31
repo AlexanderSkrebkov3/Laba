@@ -15,7 +15,7 @@ add_executable(formatter ${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp)
 target_link_libraries(formatter formatter_lib1)
 EOF
 ```
-Проверка работы
+## Проверка работы
 
 ```ShellSession
 $ cmake .
