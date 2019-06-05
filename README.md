@@ -30,6 +30,7 @@ $ git commit -m "Создание библиотеки formatter_lib1"
 $ git push origin master
 ```
 ## Задание 3
+```
 
 cd formatter
 $ cat >> CMakeLists.txt <<EOF
@@ -57,5 +58,5 @@ target_link_libraries(formatter_ex formatter_lib1)
 
 
 EOF
-
+```
 
