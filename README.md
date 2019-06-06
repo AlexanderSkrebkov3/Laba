@@ -38,9 +38,9 @@ cmake_minimum_required(VERSION 3.4)   #указание необходимой �
 project(formatter_ex)    #название проекта
 set(CMAKE_CXX_STANDARD 11)  #установка необходимых стандартов языка С++
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_library(formatter_ex STATIC ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)  #добавление к проекту библиотеки
-add_executable(formatter_ex ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)    #добавление к проекту библиотеки
-target_link_libraries(helloworld formatter_lib1)  #подключение библиотеки к проекту
+add_library(formatter_ex STATIC ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)  #создание библиотеки formatter_ex
+add_executable(helloworld ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)    #создание исполняемого файла helloworld
+target_link_libraries(helloworld formatter_lib1)  #компоновка программы с библиотекой
 EOF  #завершение работы с файлом
 
 cd formatter
