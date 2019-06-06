@@ -6,11 +6,11 @@
 ```ShellSession
 $ cd formatter
 $ cat >> CMakeLists.txt <<EOF
-cmake_minimum_required(VERSION 3.4)
-project(formatter)
-set(CMAKE_CXX_STANDARD 11)
+cmake_minimum_required(VERSION 3.4) #указание необходимой версии cmake 
+project(formatter)#название проекта
+set(CMAKE_CXX_STANDARD 11)#создание необходимых переменных
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_library(formatter_lib1 STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp)
+add_library(formatter_lib1 STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp)#добавление библиотеки к 
 add_executable(formatter ${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp)
 target_link_libraries(formatter formatter_lib1)
 EOF
@@ -33,12 +33,12 @@ $ git push origin master
 ```
 
 cd formatter
-$ cat >> CMakeLists.txt <<EOF
+$ cat >> CMakeLists.txt <<EOF #редактирование файла CMakeLists.txt
 cmake_minimum_required(VERSION 3.4)
 project(formatter_ex)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_library(formatter_ex STATIC ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)
+add_library(formatter_ex STATIC ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)#добавление к проекту библиотеки
 add_executable(formatter_ex ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)
 target_link_libraries(formatter_ex formatter_lib1)
 EOF
