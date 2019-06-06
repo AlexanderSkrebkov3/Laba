@@ -6,11 +6,11 @@
 ```ShellSession
 $ cd formatter
 $ cat >> CMakeLists.txt <<EOF
-cmake_minimum_required(VERSION 3.4) #указание необходимой версии cmake 
-project(formatter)#название проекта
-set(CMAKE_CXX_STANDARD 11)#создание необходимых переменных
+cmake_minimum_required(VERSION 3.4) 
+project(formatter)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_library(formatter_lib1 STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp)#добавление библиотеки к 
+add_library(formatter_lib1 STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp) 
 add_executable(formatter ${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp)
 target_link_libraries(formatter formatter_lib1)
 EOF
@@ -30,18 +30,18 @@ $ git commit -m "Создание библиотеки formatter_lib1"
 $ git push origin master
 ```
 ## Задание 3
-```
+```ShellSession
 
-cd formatter
+cd formatter   #переход в директорию в которой расположена библиотека
 $ cat >> CMakeLists.txt <<EOF #редактирование файла CMakeLists.txt
-cmake_minimum_required(VERSION 3.4)
-project(formatter_ex)
-set(CMAKE_CXX_STANDARD 11)
+cmake_minimum_required(VERSION 3.4)   #указание необходимой версии cmake
+project(formatter_ex)    #название проекта
+set(CMAKE_CXX_STANDARD 11)  #установка необходимых стандартов языка С++
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_library(formatter_ex STATIC ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)#добавление к проекту библиотеки
-add_executable(formatter_ex ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)
-target_link_libraries(formatter_ex formatter_lib1)
-EOF
+add_library(formatter_ex STATIC ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)  #добавление к проекту библиотеки
+add_executable(formatter_ex ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)    #добавление к проекту библиотеки
+target_link_libraries(helloworld formatter_lib1)  #подключение библиотеки к проекту
+EOF  #завершение работы с файлом
 
 cd formatter
 $ cat >> CMakeLists.txt <<EOF
@@ -52,9 +52,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(formatter_lib1 STATIC ${CMAKE_CURRENT_SOURCE_DIR}/solver.cpp)
 add_library(solver_lib STATIC ${CMAKE_CURRENT_SOURCE_DIR}/solver.cpp)
 
-add_executable(formatter_ex ${CMAKE_CURRENT_SOURCE_DIR}/solver.cpp)
-target_link_libraries(formatter_ex formatter_lib1)
-
+add_executable(formatter_lib1 ${CMAKE_CURRENT_SOURCE_DIR}/solver.cpp)
+add_executable(solver_lib ${CMAKE_CURRENT_SOURCE_DIR}/solver.cpp)
+target_link_libraries(solver  formatter_ex)
+target_link_libraries(solver solver_lib)
 
 
 EOF
