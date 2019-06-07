@@ -43,7 +43,7 @@ add_executable(helloworld ${CMAKE_CURRENT_SOURCE_DIR}/helloworld.cpp)    #соз
 target_link_libraries(helloworld formatter_lib1)  #компоновка программы с библиотекой
 EOF  #завершение работы с файлом
 
-cd formatter
+cd solver
 $ cat >> CMakeLists.txt <<EOF
 cmake_minimum_required(VERSION 3.4)
 project(formatter_ex)
@@ -52,10 +52,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(formatter_lib1 STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter_lib1.cpp)
 add_library(solver_lib STATIC ${CMAKE_CURRENT_SOURCE_DIR}/solver_lib.cpp)
 
-add_executable(formatter_lib1 ${CMAKE_CURRENT_SOURCE_DIR}/solver.cpp)
-add_executable(solver_lib ${CMAKE_CURRENT_SOURCE_DIR}/solver.cpp)
-target_link_libraries(solver  formatter_ex)
-target_link_libraries(solver solver_lib)
+add_executable(solver formatter_lib1.cpp solver_lib.cpp )#Команда компилирует исполняемый файл с заданным именем из списка исходников. 
+
+target_link_libraries(solver solver_lib formatter_lib1)#Команда компонует исполняемый файл с другими предоставляемыми библиотеками.
 
 
 EOF
