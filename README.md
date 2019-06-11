@@ -46,15 +46,15 @@ EOF  #завершение работы с файлом
 cd solver
 $ cat >> CMakeLists.txt <<EOF
 cmake_minimum_required(VERSION 3.4)
-project(formatter_ex)
+project(solver)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(formatter_lib1 STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter_lib1.cpp)
 add_library(solver_lib STATIC ${CMAKE_CURRENT_SOURCE_DIR}/solver_lib.cpp)
 
-add_executable(solver formatter_lib1.cpp solver_lib.cpp )#Команда компилирует исполняемый файл с заданным именем из списка исходников. 
+add_executable(solver  solver.cpp )#Команда компилирует исполняемый файл с заданным именем из списка исходников. 
 
-target_link_libraries(solver solver_lib formatter_lib1)#Команда компонует исполняемый файл с другими предоставляемыми библиотеками.
+target_link_libraries(solver solver_lib formatter_lib1)#Команда компонует исполняемый файл solver с другими предоставляемыми библиотеками.
 
 
 EOF
